@@ -1,3 +1,48 @@
+# Label Studio 기반 오디오 라벨링
+
+코골이 소리 감지와 자동 라벨링을 위한 머신러닝 프로젝트입니다.  
+Label Studio 백엔드와 연동하여 오디오를 자동 라벨링하고,  
+scikit-learn 기반 모델로 분류 및 분석까지 진행했습니다.
+
+
+#프로젝트 개요
+
+목표 - 오디오 파일에서 코골이 소리를 자동 감지 및 분류
+사용도구 : Label Studio, librosa, FastAPI, scikit-learn, Python
+백엔드 자동화 : REST API로 Label Studio 자동 submit구현
+
+#Label Studio 설명
+- Labeling interface : 라벨링 템플릿 설정
+- Model : 백엔드 연결 -> 실시간 학습 가능
+- Cloud Storage 연동 : 외부 저장소 자동 불러오기
+
+
+## Label Studio 설치 실행
+
+== bash
+pip install -u label-studio
+label-studio
+
+## ML 백엔드 서버 설치
+
+== bash
+git clone https://github.com/HumanSignal/label-studio-ml-backend.git
+cd label-studio-ml-backend
+pip install -r requirements.txt
+python my_ml_backend.py
+
+#오디오 처리
+pip install librosa
+
+#API 설정
+좌측 상단 -> Organization -> Legacy Token 활성화
+우측 상단 -> Account & Settings -> Access Token 복사
+
+== bash
+pip install label-studio-sdk
+
+
+
 # What is the Label Studio ML backend?
 
 The Label Studio ML backend is an SDK that lets you wrap your machine learning code and turn it into a web server.
